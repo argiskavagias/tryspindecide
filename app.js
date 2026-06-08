@@ -531,7 +531,7 @@ function animateFireworks() {
 
 // --- CANVAS WHEEL RENDERING (THEME AWARE) ---
 function drawWheel() {
-    const size = elements.wheelCanvas.width;
+    const size = 600;
     const center = size / 2;
     const radius = center - 15;
     
