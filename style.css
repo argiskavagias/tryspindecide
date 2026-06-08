@@ -808,18 +808,15 @@ textarea:focus {
 .result-value {
     font-size: 2.25rem;
     font-weight: 800;
-    background: linear-gradient(135deg, var(--text-primary) 30%, var(--accent-cyan));
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-    text-shadow: 0 0 20px rgba(6, 182, 212, 0.2);
+    color: var(--accent-cyan);
+    text-shadow: 0 0 20px var(--accent-cyan-glow);
     padding: 0.5rem 1rem;
     word-break: break-word;
 }
 
 .theme-light .result-value {
-    background: none;
-    -webkit-text-fill-color: initial;
     color: var(--accent-purple);
+    text-shadow: none;
 }
 
 .result-actions {
