@@ -1254,19 +1254,9 @@ function initEventBindings() {
     elements.premiumBtn.addEventListener('click', () => {
         const isEn = currentLang === 'en';
         const msg = isEn 
-            ? 'Do you want to enable Pro version (Remove Ads) for $1.99? (Payment simulation)'
-            : 'Θέλετε να ενεργοποιήσετε την Pro έκδοση (Χωρίς Διαφημίσεις) για 1.99€; (Προσομοίωση πληρωμής)';
-            
-        const confirmPay = confirm(msg);
-        if (confirmPay) {
-            alert(isEn ? 'Thank you! Pro version activated successfully.' : 'Συγχαρητήρια! Η Pro έκδοση ενεργοποιήθηκε. Οι διαφημίσεις αφαιρέθηκαν.');
-            document.querySelectorAll('.ad-container').forEach(ad => {
-                ad.innerHTML = '<div style="color:var(--accent-cyan); font-weight:bold; font-size:0.9rem;">⭐ PRO ACTIVATED - NO ADS</div>';
-                ad.style.borderColor = 'var(--accent-cyan)';
-            });
-            elements.premiumBtn.innerHTML = '⭐ Active Pro';
-            elements.premiumBtn.style.background = 'linear-gradient(135deg, var(--accent-cyan), var(--accent-purple))';
-        }
+            ? 'Premium Ad-Free Pro is coming soon! Thank you for supporting SpinDecide.'
+            : 'Η έκδοση Ad-Free Pro έρχεται σύντομα! Σας ευχαριστούμε που υποστηρίζετε το SpinDecide.';
+        alert(msg);
     });
 
     window.addEventListener('resize', () => {
