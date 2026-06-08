@@ -150,6 +150,18 @@ const PRESETS = {
         en: ['Yes ✅', 'No ❌', 'Maybe 🤷‍♂️'],
         el: ['Ναι ✅', 'Όχι ❌', 'Ίσως 🤷‍♂️']
     },
+    name: {
+        en: ['George 🧑‍💻', 'Maria 👩‍⚕️', 'Nick 🧑‍🍳', 'Helen 👩‍🎨', 'Alex 🧑‍✈️', 'Sophia 👩‍🔬', 'Chris 🧑‍🚒', 'Emily 👩‍💼'],
+        el: ['Γιώργος 🧑‍💻', 'Μαρία 👩‍⚕️', 'Νίκος 🧑‍🍳', 'Ελένη 👩‍🎨', 'Αλέξης 🧑‍✈️', 'Σοφία 👩‍🔬', 'Χρήστος 🧑‍🚒', 'Αιμιλία 👩‍💼']
+    },
+    number: {
+        en: ['1️⃣', '2️⃣', '3️⃣', '4️⃣', '5️⃣', '6️⃣', '7️⃣', '8️⃣', '9️⃣', '10️⃣'],
+        el: ['1️⃣', '2️⃣', '3️⃣', '4️⃣', '5️⃣', '6️⃣', '7️⃣', '8️⃣', '9️⃣', '10️⃣']
+    },
+    tarot: {
+        en: ['The Fool 🃏', 'The Magician 🧙‍♂️', 'The High Priestess 🔮', 'The Empress 👑', 'The Emperor 🏰', 'The Hierophant 📜', 'The Lovers 💖', 'The Chariot 🏹', 'Strength 🦁', 'The Hermit 🕯️', 'Wheel of Fortune 🎡', 'Justice ⚖️'],
+        el: ['Ο Τρελός 🃏', 'Ο Μάγος 🧙‍♂️', 'Η Αρχιέρεια 🔮', 'Η Αυτοκράτειρα 👑', 'Ο Αυτοκράτορας 🏰', 'Ο Ιεροφάντης 📜', 'Οι Εραστές 💖', 'Το Άρμα 🏹', 'Δύναμη 🦁', 'Ο Ερημίτης 🕯️', 'Ο Τροχός της Τύχης 🎡', 'Δικαιοσύνη ⚖️']
+    },
     truthOrDare: {
         en: {
             friendly: [
@@ -785,6 +797,27 @@ function selectMode(mode) {
             elements.santaInputs.classList.remove('hidden');
             elements.standardActions.classList.add('hidden');
             break;
+            
+        case 'name':
+            elements.sidebarTitle.textContent = isEn ? 'Name Picker' : 'Τροχός Ονομάτων';
+            elements.genericInputs.classList.remove('hidden');
+            elements.itemInput.placeholder = isEn ? 'Enter names here...' : 'Εισάγετε ονόματα εδώ...';
+            elements.itemInput.value = PRESETS.name[currentLang].join('\n');
+            break;
+            
+        case 'number':
+            elements.sidebarTitle.textContent = isEn ? 'Number Generator' : 'Τροχός Αριθμών';
+            elements.genericInputs.classList.remove('hidden');
+            elements.itemInput.placeholder = isEn ? 'Enter numbers here...' : 'Εισάγετε αριθμούς εδώ...';
+            elements.itemInput.value = PRESETS.number[currentLang].join('\n');
+            break;
+            
+        case 'tarot':
+            elements.sidebarTitle.textContent = isEn ? 'Tarot Oracle' : 'Τροχός Ταρώ';
+            elements.genericInputs.classList.remove('hidden');
+            elements.itemInput.placeholder = isEn ? 'Enter tarot cards here...' : 'Εισάγετε κάρτες ταρώ εδώ...';
+            elements.itemInput.value = PRESETS.tarot[currentLang].join('\n');
+            break;
     }
     
     updateWheelFromInputs();
@@ -806,7 +839,7 @@ function loadDareItems() {
 
 // --- UPDATE WHEEL LOGIC ---
 function updateWheelFromInputs() {
-    if (currentMode === 'custom' || currentMode === 'dinner' || currentMode === 'yesno') {
+    if (currentMode === 'custom' || currentMode === 'dinner' || currentMode === 'yesno' || currentMode === 'name' || currentMode === 'number' || currentMode === 'tarot') {
         const text = elements.itemInput.value.trim();
         wheelItems = text ? text.split('\n').filter(x => x.trim()) : ['Option 1', 'Option 2', 'Option 3'];
     } 
@@ -1266,6 +1299,12 @@ window.addEventListener('DOMContentLoaded', () => {
         selectMode('dare');
     } else if (path.includes('secret-santa')) {
         selectMode('santa');
+    } else if (path.includes('name-picker')) {
+        selectMode('name');
+    } else if (path.includes('number-wheel')) {
+        selectMode('number');
+    } else if (path.includes('tarot-wheel')) {
+        selectMode('tarot');
     } else if (window.location.hash) {
         decodeWheelState();
     } else {
