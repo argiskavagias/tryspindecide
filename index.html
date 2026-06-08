@@ -1,0 +1,386 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <!-- Primary Meta Tags (English Default) -->
+    <title id="metaTitle">SpinDecide | Premium Decision Maker Wheel & Random Picker</title>
+    <meta name="title" content="SpinDecide | Premium Decision Maker Wheel & Random Picker" id="metaTitleTag">
+    <meta name="description" content="Can't make a choice? Spin the decision wheel! Try specialized modes: Dinner Picker, Yes or No Wheel, Team Generator, Truth or Dare, Secret Santa & Custom wheels." id="metaDescTag">
+    <meta name="keywords" content="decision wheel, wheel of names, dinner picker, yes or no wheel, random team generator, truth or dare online, secret santa generator, picker wheel" id="metaKeywordsTag">
+    <meta name="author" content="tryspindecide.com">
+    <meta name="robots" content="index, follow">
+
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://tryspindecide.com/">
+    <meta property="og:title" content="SpinDecide | Premium Decision Maker Wheel & Random Picker" id="metaOgTitle">
+    <meta property="og:description" content="Spin the glowing neon choice wheel to decide! Try custom modes, Yes or No, Dinner Picker, Team Generator, Truth or Dare, and Secret Santa." id="metaOgDesc">
+    <meta property="og:image" content="https://tryspindecide.com/assets/og-image.png">
+
+    <!-- Twitter -->
+    <meta property="twitter:card" content="summary_large_image">
+    <meta property="twitter:url" content="https://tryspindecide.com/">
+    <meta property="twitter:title" content="SpinDecide | Premium Decision Maker Wheel & Random Picker" id="metaTwitterTitle">
+    <meta property="twitter:description" content="Spin the glowing neon choice wheel to decide! Try custom modes, Yes or No, Dinner Picker, Team Generator, Truth or Dare, and Secret Santa." id="metaTwitterDesc">
+    <meta property="twitter:image" content="https://tryspindecide.com/assets/og-image.png">
+
+    <!-- Canonical URL -->
+    <link rel="canonical" href="https://tryspindecide.com/">
+
+    <!-- Favicon -->
+    <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Ctext y='.9em' font-size='90'%3E🎡%3C/text%3E%3C/svg%3E">
+
+    <!-- Google Fonts - Outfit for modern look -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;800&display=swap" rel="stylesheet">
+
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="style.css">
+
+    <!-- JSON-LD Structured Data for SEO -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "WebApplication",
+        "name": "SpinDecide",
+        "url": "https://tryspindecide.com",
+        "description": "Premium decision maker wheel with custom presets, i18n support, multiple styles, Yes or No wheel, and local offline Secret Santa generation.",
+        "applicationCategory": "UtilityApplication",
+        "operatingSystem": "All",
+        "browserRequirements": "Requires JavaScript and HTML5 Canvas Support",
+        "offers": {
+            "@type": "Offer",
+            "price": "0.00",
+            "priceCurrency": "USD"
+        }
+    }
+    </script>
+</head>
+<body class="theme-cyber">
+    <!-- Premium Glowing Background Elements -->
+    <div class="glow-orb orb-1"></div>
+    <div class="glow-orb orb-2"></div>
+
+    <!-- Navigation Header -->
+    <header class="app-header">
+        <div class="logo-container" onclick="window.location.hash=''; window.location.reload();">
+            <svg class="logo-icon" viewBox="0 0 24 24" width="32" height="32">
+                <circle cx="12" cy="12" r="10" fill="none" stroke="url(#logoGrad)" stroke-width="3"/>
+                <path d="M12 2v10l5 5" fill="none" stroke="url(#logoGrad)" stroke-width="3" stroke-linecap="round"/>
+                <defs>
+                    <linearGradient id="logoGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+                        <stop offset="0%" stop-color="#a855f7" />
+                        <stop offset="100%" stop-color="#06b6d4" />
+                    </linearGradient>
+                </defs>
+            </svg>
+            <span class="logo-text">Spin<span class="highlight">Decide</span></span>
+        </div>
+
+        <nav class="mode-nav" id="modeNav">
+            <button class="nav-btn active" data-mode="custom" id="btn-mode-custom" data-i18n="nav_custom">Custom</button>
+            <button class="nav-btn" data-mode="yesno" id="btn-mode-yesno" data-i18n="nav_yesno">Yes or No</button>
+            <button class="nav-btn" data-mode="dinner" id="btn-mode-dinner" data-i18n="nav_dinner">Dinner Picker</button>
+            <button class="nav-btn" data-mode="team" id="btn-mode-team" data-i18n="nav_team">Team Picker</button>
+            <button class="nav-btn" data-mode="dare" id="btn-mode-dare" data-i18n="nav_dare">Truth or Dare</button>
+            <button class="nav-btn" data-mode="santa" id="btn-mode-santa" data-i18n="nav_santa">Secret Santa</button>
+        </nav>
+
+        <div class="header-actions">
+            <!-- Theme Selection Selector -->
+            <div class="select-wrapper">
+                <select id="themeSelect" class="header-select" aria-label="Choose Theme">
+                    <option value="cyber">🌌 Neon Cyber</option>
+                    <option value="sunset">🌅 Sunset Pastel</option>
+                    <option value="light">☀️ Light Glass</option>
+                    <option value="midnight">🕶️ Midnight Obsidian</option>
+                </select>
+            </div>
+
+            <!-- Language Selection Selector -->
+            <div class="select-wrapper">
+                <select id="langSelect" class="header-select" aria-label="Select Language">
+                    <option value="en" selected>🇬🇧 EN</option>
+                    <option value="el">🇬🇷 EL</option>
+                </select>
+            </div>
+
+            <!-- Audio toggle -->
+            <button class="icon-btn" id="soundToggle" aria-label="Toggle Sound">
+                <svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="icon-volume-on"><polygon points="11 5 6 9 2 9 2 15 6 15 11 19 11 5"></polygon><path d="M19.07 4.93a10 10 0 0 1 0 14.14M15.54 8.46a5 5 0 0 1 0 7.07"></path></svg>
+                <svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="icon-volume-off hidden"><polygon points="11 5 6 9 2 9 2 15 6 15 11 19 11 5"></polygon><line x1="23" y1="9" x2="17" y2="15"></line><line x1="17" y1="9" x2="23" y2="15"></line></svg>
+            </button>
+            <button class="premium-badge-btn" id="premiumBtn" data-i18n="btn_pro">
+                <svg viewBox="0 0 24 24" width="14" height="14" fill="currentColor"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+                Ad-Free Pro
+            </button>
+        </div>
+    </header>
+
+    <!-- Main Container -->
+    <main class="app-main">
+        <!-- Sidebar for Settings / Inputs -->
+        <aside class="app-sidebar" id="sidebar">
+            <div class="glass-panel sidebar-content">
+                <h2 class="section-title" id="sidebarTitle" data-i18n="sidebar_title">Wheel Settings</h2>
+                
+                <!-- CUSTOM/DINNER/YESNO MODE INPUTS -->
+                <div class="input-group" id="genericInputs">
+                    <label for="itemInput" id="genericInputLabel" data-i18n="input_generic_label">Add Options (one per line)</label>
+                    <textarea id="itemInput" placeholder="Enter options here..." rows="10"></textarea>
+                    
+                    <div class="quick-presets hidden" id="dinnerPresets">
+                        <span class="preset-label" data-i18n="presets_label">Quick Presets:</span>
+                        <div class="preset-tags">
+                            <button class="preset-tag" data-items="Pizza,Burger,Sushi,Pasta,Tacos,Salad,Crepes,Kebab" data-i18n="preset_tag_foods">Default Foods</button>
+                            <button class="preset-tag" data-items="Chinese,Italian,Mexican,Greek,Burgers,Sushi Bar" data-i18n="preset_tag_cuisines">Cuisines</button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- TEAM PICKER INPUTS -->
+                <div class="input-group hidden" id="teamInputs">
+                    <label for="playerInput" data-i18n="input_players_label">Player Names (one per line)</label>
+                    <textarea id="playerInput" placeholder="George&#10;Maria&#10;Nick&#10;Helen..." rows="8"></textarea>
+                    
+                    <div class="number-input">
+                        <label for="teamCount" data-i18n="input_teams_label">Number of Teams</label>
+                        <div class="counter-control">
+                            <button class="counter-btn" id="decTeams">-</button>
+                            <input type="number" id="teamCount" value="2" min="2" max="10">
+                            <button class="counter-btn" id="incTeams">+</button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- TRUTH OR DARE INPUTS -->
+                <div class="input-group hidden" id="dareInputs">
+                    <label for="dareDifficulty" data-i18n="input_dare_label">Category / Difficulty</label>
+                    <select id="dareDifficulty" class="custom-select">
+                        <option value="friendly" data-i18n="dare_opt_friendly">Friendly (Family & Kids)</option>
+                        <option value="party" selected data-i18n="dare_opt_party">Party (Fun & Crazy)</option>
+                        <option value="spicy" data-i18n="dare_opt_spicy">Spicy (18+ & Couples)</option>
+                    </select>
+                    <div class="custom-prompts-toggle">
+                        <label class="checkbox-container">
+                            <input type="checkbox" id="customDareCheck">
+                            <span class="checkmark"></span>
+                            <span data-i18n="dare_custom_check">Use my own dares</span>
+                        </label>
+                    </div>
+                    <textarea id="customDareInput" class="hidden" placeholder="Write your own dares (one per line)..." rows="6"></textarea>
+                </div>
+
+                <!-- SECRET SANTA INPUTS -->
+                <div class="input-group hidden" id="santaInputs">
+                    <label for="santaNames" data-i18n="input_santa_label">Participants (one per line)</label>
+                    <textarea id="santaNames" placeholder="John&#10;Jane&#10;Michael&#10;Sarah..." rows="8"></textarea>
+                    <div class="action-description">
+                        <p class="info-text" data-i18n="santa_description">The wheel will run the Secret Santa draw locally. Unique encrypted matching links will be generated for you to copy and send to each friend.</p>
+                    </div>
+                    <button class="action-btn secondary" id="btnGenerateSanta" data-i18n="btn_santa_draw">Secret Santa Draw</button>
+                </div>
+
+                <div class="sidebar-actions" id="standardActions">
+                    <button class="action-btn primary" id="btnUpdateWheel" data-i18n="btn_update">Update Wheel</button>
+                    <button class="action-btn secondary" id="btnShareWheel" data-i18n="btn_share_wheel">Share Wheel</button>
+                    <button class="action-btn danger" id="btnClearWheel" data-i18n="btn_clear">Clear</button>
+                </div>
+            </div>
+
+            <!-- Pre-allocated Ad slot -->
+            <div class="ad-container sidebar-ad">
+                <div class="ad-placeholder">
+                    <span class="ad-label" data-i18n="ad_label">SPONSOR</span>
+                    <p class="ad-subtext" data-i18n="ad_subtext">Support SpinDecide by trying our Ad-Free Pro version</p>
+                </div>
+            </div>
+        </aside>
+
+        <!-- Wheel Section -->
+        <section class="wheel-section">
+            <div class="wheel-wrapper">
+                <!-- Pointer -->
+                <div class="wheel-pointer">
+                    <svg viewBox="0 0 30 40" width="30" height="40">
+                        <path d="M15 40 L0 10 A 15 15 0 0 1 30 10 Z" fill="#06b6d4" class="pointer-fill" filter="drop-shadow(0 0 8px #06b6d4)"/>
+                        <circle cx="15" cy="12" r="5" fill="#ffffff"/>
+                    </svg>
+                </div>
+
+                <!-- Canvas -->
+                <div class="canvas-container">
+                    <canvas id="wheelCanvas" width="600" height="600"></canvas>
+                </div>
+
+                <!-- Spin Center Button -->
+                <button class="spin-trigger" id="spinButton" data-i18n="spin_btn">SPIN</button>
+            </div>
+            
+            <!-- Result Popup -->
+            <div class="result-overlay" id="resultOverlay">
+                <div class="result-card glass-panel">
+                    <div class="confetti-container" id="confettiCanvasContainer"></div>
+                    <h3 class="result-title" id="resultTitle" data-i18n="result_title">The winner is:</h3>
+                    <div class="result-value" id="resultValue">...</div>
+                    <div class="result-actions">
+                        <button class="action-btn primary" id="btnResultClose" data-i18n="btn_result_close">Awesome!</button>
+                        <button class="action-btn secondary" id="btnResultShare" data-i18n="btn_result_share">Share Result</button>
+                    </div>
+                    <!-- Affiliate link -->
+                    <div class="result-affiliate hidden" id="resultAffiliate">
+                        <a href="#" target="_blank" id="affiliateLink" class="affiliate-btn">
+                            <span class="affiliate-icon">🛍️</span>
+                            <span id="affiliateText">View deals for this</span>
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Secret Santa Results Overlay -->
+            <div class="result-overlay" id="santaOverlay">
+                <div class="result-card glass-panel santa-card">
+                    <h3 class="result-title" data-i18n="santa_complete_title">🎄 Secret Santa Matches Complete! 🎄</h3>
+                    <p class="santa-instructions" data-i18n="santa_complete_instructions">Copy each encrypted link below and send it to the respective person. No one else will know who got matched to whom!</p>
+                    <div class="santa-links-list" id="santaLinksList"></div>
+                    <button class="action-btn primary" id="btnSantaClose" data-i18n="btn_close">Close</button>
+                </div>
+            </div>
+
+            <!-- Embed Code Modal -->
+            <div class="modal-overlay" id="embedModal">
+                <div class="modal-card glass-panel">
+                    <h3 class="modal-title" data-i18n="embed_title">Embed Wheel on Your Site</h3>
+                    <p class="modal-description" data-i18n="embed_desc">Copy the HTML iframe code below and paste it into your website.</p>
+                    <textarea class="embed-code-area" id="embedCodeText" readonly></textarea>
+                    <div class="modal-actions">
+                        <button class="action-btn primary" id="btnCopyEmbed" data-i18n="btn_copy_code">Copy Code</button>
+                        <button class="action-btn secondary" id="btnCloseEmbed" data-i18n="btn_close">Close</button>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Bottom Ad Banner -->
+    <div class="ad-container banner-ad bottom-ad">
+        <div class="ad-placeholder">
+            <span class="ad-label" data-i18n="ad_label">SPONSOR BANNER</span>
+        </div>
+    </div>
+
+    <!-- DUAL LANGUAGE SEO CONTENT HUBS (Crawlable in Raw HTML) -->
+    <!-- English SEO Block -->
+    <article class="seo-content-container" id="seo-english-container">
+        <div class="seo-wrapper">
+            <h1 class="seo-main-title">SpinDecide — The Premium Online Decision Maker Wheel</h1>
+            <p class="seo-lead-paragraph">Having trouble choosing? Spin the decision wheel! <strong>SpinDecide</strong> is the ultimate online random picker tool. Designed with premium neon-glassmorphic styling, satisfying sound effects, and specialized modes, it turns decision-making into an absolute blast.</p>
+            
+            <hr class="seo-divider">
+
+            <div class="seo-grid">
+                <section class="seo-block">
+                    <h2>🍽️ Dinner Picker (Food Wheel)</h2>
+                    <p>Stop the endless "what should we eat tonight" debate. The Dinner Picker includes quick food presets for popular cravings (Pizza, Sushi, Burgers, Pasta, Salad). Spin the wheel and let fate select your meal tonight!</p>
+                </section>
+
+                <section class="seo-block">
+                    <h2>❓ Yes or No Wheel</h2>
+                    <p>Should you buy that product? Should you call them back? When you need a quick 50/50 resolution, the Yes or No Wheel is your best friend. A simple, fast, and unbiased choice creator.</p>
+                </section>
+
+                <section class="seo-block">
+                    <h2>👥 Team Picker (Group Maker)</h2>
+                    <p>A must-have tool for teachers, gamers, and party hosts. Input your participant list, select how many groups you need, and watch the wheel randomize and distribute names into balanced teams instantly.</p>
+                </section>
+
+                <section class="seo-block">
+                    <h2>🎲 Truth or Dare Generator</h2>
+                    <p>Spice up your party with the online Truth or Dare game. Select a difficulty level (Friendly for families, Party for laughs, or Spicy for couples and adults) and spin to pick a fun challenge.</p>
+                </section>
+            </div>
+
+            <hr class="seo-divider">
+
+            <section class="seo-faq">
+                <h2>Frequently Asked Questions (FAQ)</h2>
+                <div class="faq-item">
+                    <h3>How do I share a custom wheel?</h3>
+                    <p>Simply customize your options and click <strong>"Share Wheel"</strong>. A custom link will be copied to your clipboard containing your wheel state. When your friends open it, your wheel is loaded instantly!</p>
+                </div>
+                <div class="faq-item">
+                    <h3>Is it free?</h3>
+                    <p>Yes, all features are 100% free. We display unobtrusive sponsor ads to support hosting. You can upgrade to our Pro version to remove ads completely.</p>
+                </div>
+            </section>
+        </div>
+    </article>
+
+    <!-- Greek SEO Block -->
+    <article class="seo-content-container hidden" id="seo-greek-container">
+        <div class="seo-wrapper">
+            <h1 class="seo-main-title">SpinDecide — Ο Premium Online Τροχός Αποφάσεων</h1>
+            <p class="seo-lead-paragraph">Δεν μπορείτε να αποφασίσετε; Γυγίστε τον τροχό των αποφάσεων! Το <strong>SpinDecide</strong> είναι το κορυφαίο online εργαλείο λήψης αποφάσεων (random picker). Με κορυφαία neon-glassmorphic αισθητική, ηχητικά εφέ και ειδικά modes, κάνει τη λήψη αποφάσεων διασκεδαστική και δίκαιη.</p>
+            
+            <hr class="seo-divider">
+
+            <div class="seo-grid">
+                <section class="seo-block">
+                    <h2>🍽️ Dinner Picker (Τροχός Φαγητού)</h2>
+                    <p>Σταματήστε τις ατελείωτες συζητήσεις για το "τι θα φάμε σήμερα". Ο Τροχός Φαγητού περιλαμβάνει έτοιμες επιλογές για Pizza, Sushi, Burgers, Pasta. Απλά γυρίστε τον τροχό!</p>
+                </section>
+
+                <section class="seo-block">
+                    <h2>❓ Yes or No Wheel (Τροχός Ναι ή Όχι)</h2>
+                    <p>Όταν χρειάζεστε μια γρήγορη, αντικειμενική απάντηση 50/50. Ο τροχός Ναι ή Όχι είναι η ιδανική λύση για γρήγορη λήψη αποφάσεων.</p>
+                </section>
+
+                <section class="seo-block">
+                    <h2>👥 Team Picker (Τροχός Ομάδων)</h2>
+                    <p>Ιδανικό για εκπαιδευτικούς, gamers και παρέες. Εισάγετε τα ονόματα, επιλέξτε αριθμό ομάδων και ο τροχός θα μοιράσει αυτόματα τους παίκτες σε ισορροπημένες ομάδες.</p>
+                </section>
+
+                <section class="seo-block">
+                    <h2>🎲 Truth or Dare (Θάρρος ή Αλήθεια)</h2>
+                    <p>Απογειώστε το πάρτι σας. Επιλέξτε επίπεδο δυσκολίας (Friendly, Party, ή Spicy 18+) και γυρίστε τον τροχό για τρελές προκλήσεις.</p>
+                </section>
+            </div>
+
+            <hr class="seo-divider">
+
+            <section class="seo-faq">
+                <h2>Συχνές Ερωτήσεις (FAQ)</h2>
+                <div class="faq-item">
+                    <h3>Πώς μπορώ να κοινοποιήσω έναν custom τροχό;</h3>
+                    <p>Αφού προσθέσετε τις επιλογές σας, πατήστε <strong>"Κοινοποίηση Τροχού"</strong>. Θα δημιουργηθεί ένας σύνδεσμος ο οποίος περιέχει κωδικοποιημένες τις επιλογές σας για να τον στείλετε στους φίλους σας.</p>
+                </div>
+            </section>
+        </div>
+    </article>
+
+    <!-- Footer with Silo Cross-Links for SEO Power -->
+    <footer class="app-footer">
+        <div class="footer-content">
+            <p>&copy; 2026 SpinDecide. All rights reserved. Built for speed and global SEO.</p>
+            <div class="footer-links">
+                <!-- Silo Links Grid -->
+                <a href="index.html">Custom Wheel</a>
+                <a href="yes-no-wheel.html">Yes or No Wheel</a>
+                <a href="dinner-picker.html">Dinner Picker</a>
+                <a href="team-picker.html">Team Picker</a>
+                <a href="truth-or-dare.html">Truth or Dare</a>
+                <a href="secret-santa.html">Secret Santa</a>
+                <a href="#" id="btnOpenEmbedModal" data-i18n="link_embed">Embed Wheel</a>
+                <a href="#" data-i18n="link_privacy">Privacy Policy</a>
+                <a href="#" data-i18n="link_terms">Terms of Use</a>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Local App JavaScript -->
+    <script src="app.js"></script>
+</body>
+</html>

@@ -1,0 +1,82 @@
+{
+    "siteName": "SpinDecide",
+    "primaryDomain": "tryspindecide.com",
+    "locales": ["en", "el"],
+    "defaultLanguage": "en",
+    "metaTemplates": {
+        "en": {
+            "custom": {
+                "title": "SpinDecide | Premium Decision Maker Wheel & Random Picker",
+                "description": "Can't make a choice? Spin the custom decision wheel! Add options, names, or numbers and spin the neon picker wheel."
+            },
+            "yesno": {
+                "title": "Yes or No Wheel | Spin to Decide - SpinDecide",
+                "description": "Need a quick Yes or No answer? Spin our unbiased 50/50 picker wheel for instant online decision making."
+            },
+            "dinner": {
+                "title": "Dinner Picker | What Should I Eat Tonight? Food Wheel",
+                "description": "Undecided on what to eat? Spin the food choice wheel to select Pizza, Sushi, Burgers, or Pasta instantly."
+            },
+            "team": {
+                "title": "Team Picker | Random Group Generator Wheel",
+                "description": "Input names, specify group sizes, and spin the wheel to organize participants into balanced random teams."
+            },
+            "dare": {
+                "title": "Truth or Dare Generator | Spin the Party Game Wheel",
+                "description": "Play Truth or Dare online! Spin the choice wheel loaded with Friendly, Crazy, or Spicy adult prompts."
+            },
+            "santa": {
+                "title": "Secret Santa Generator | Free Local Christmas Gift Draw",
+                "description": "Organize your Christmas Gift exchange locally. Generate secure encrypted matches without email or logins."
+            }
+        },
+        "el": {
+            "custom": {
+                "title": "SpinDecide | Δωρεάν Online Τροχός Αποφάσεων με Twists",
+                "description": "Δυσκολεύεστε να αποφασίσετε; Φτιάξτε τον δικό σας τροχό λήψης αποφάσεων με custom ονόματα και neon 3D εφέ."
+            },
+            "yesno": {
+                "title": "Τροχός Ναι ή Όχι | Spin to Decide - SpinDecide",
+                "description": "Χρειάζεστε μια γρήγορη απάντηση Ναι ή Όχι; Γυρίστε τον αμερόληπτο online τροχό μας για 50/50 αποφάσεις."
+            },
+            "dinner": {
+                "title": "Dinner Picker | Τι να φάω σήμερα; Τροχός Φαγητού",
+                "description": "Δεν ξέρετε τι να φάτε; Γυρίστε τον τροχό επιλογής φαγητού για να διαλέξετε Pizza, Sushi, Burgers ή Pasta."
+            },
+            "team": {
+                "title": "Team Picker | Online Τυχαία Γεννήτρια Ομάδων",
+                "description": "Μοιράστε παίκτες, μαθητές ή συνεργάτες σε ισορροπημένες τυχαίες ομάδες αυτόματα με τον τροχό ομάδων."
+            },
+            "dare": {
+                "title": "Truth or Dare | Online Τροχός Θάρρος ή Αλήθεια",
+                "description": "Παίξτε online Θάρρος ή Αλήθεια με την παρέα σας! Επιλέξτε ανάμεσα σε Friendly, Crazy ή Spicy προκλήσεις."
+            },
+            "santa": {
+                "title": "Secret Santa Generator | Δωρεάν Κλήρωση Χριστουγέννων",
+                "description": "Organize your Christmas Gift exchange locally. Generate secure encrypted matches without email or logins."
+            }
+        }
+    },
+    "keywords": {
+        "en": [
+            "decision wheel",
+            "wheel of names",
+            "dinner picker",
+            "yes or no wheel",
+            "random team generator",
+            "truth or dare online",
+            "secret santa generator",
+            "picker wheel"
+        ],
+        "el": [
+            "τροχός αποφάσεων",
+            "wheel of names",
+            "dinner picker",
+            "random team generator",
+            "truth or dare wheel",
+            "secret santa generator",
+            "random choice generator",
+            "spin the wheel"
+        ]
+    }
+}
