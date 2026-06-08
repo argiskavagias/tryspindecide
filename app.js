@@ -713,14 +713,14 @@ function triggerAffiliateLink(winner) {
         wrapper.classList.remove('hidden');
     }
     else if (currentMode === 'dare') {
-        link.href = `https://www.amazon.com/s?k=party+board+games&tag=spindecide-20`;
+        link.href = `https://www.amazon.com/s?k=party+board+games&tag=tryspindecide-20`;
         text.textContent = isEn ? `Get the best Party Games on Amazon! 🎲` : `Βρες κορυφαία Party Games στο Amazon! 🎲`;
         wrapper.classList.remove('hidden');
     }
     else {
         const cleanWord = encodeURIComponent(winner.replace(/[^\w\s\u0370-\u03ff]/g, '').trim());
         if (cleanWord.length > 2) {
-            link.href = `https://www.amazon.com/s?k=${cleanWord}&tag=spindecide-20`;
+            link.href = `https://www.amazon.com/s?k=${cleanWord}&tag=tryspindecide-20`;
             text.textContent = isEn ? `Search "${winner}" on Amazon! 🛍️` : `Αναζήτησε "${winner}" στο Amazon! 🛍️`;
             wrapper.classList.remove('hidden');
         }
