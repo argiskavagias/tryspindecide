@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Terms of Use | SpinDecide</title>
+    <meta name="robots" content="noindex, follow">
+    <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Ctext y='.9em' font-size='90'%3E🎡%3C/text%3E%3C/svg%3E">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+    <style>
+        .policy-container {
+            max-width: 900px;
+            margin: 2rem auto;
+            padding: 2.5rem;
+            line-height: 1.8;
+        }
+        .policy-section {
+            margin-bottom: 2.5rem;
+        }
+        .policy-section h2 {
+            font-size: 1.5rem;
+            margin-bottom: 1rem;
+            color: var(--accent-cyan);
+            border-bottom: 1px solid var(--panel-border);
+            padding-bottom: 0.5rem;
+        }
+        .policy-section h3 {
+            font-size: 1.15rem;
+            margin: 1rem 0 0.5rem 0;
+            color: var(--text-primary);
+        }
+        .policy-section p, .policy-section ul {
+            color: var(--text-secondary);
+            margin-bottom: 1rem;
+            font-size: 0.95rem;
+        }
+        .policy-section ul {
+            padding-left: 1.5rem;
+        }
+        .lang-toggle-btn {
+            background: rgba(255, 255, 255, 0.05);
+            border: 1px solid var(--panel-border);
+            color: var(--text-primary);
+            padding: 0.5rem 1rem;
+            border-radius: 9999px;
+            font-family: inherit;
+            font-weight: 600;
+            cursor: pointer;
+            transition: var(--transition-smooth);
+        }
+        .lang-toggle-btn:hover {
+            border-color: var(--accent-cyan);
+            background: rgba(255, 255, 255, 0.1);
+        }
+        .policy-lang-block {
+            display: block;
+        }
+        .policy-lang-block.hidden {
+            display: none !important;
+        }
+    </style>
+</head>
+<body class="theme-cyber">
+    <div class="glow-orb orb-1"></div>
+    <div class="glow-orb orb-2"></div>
+
+    <header class="app-header">
+        <div class="logo-container" onclick="window.location.href='index.html';">
+            <svg class="logo-icon" viewBox="0 0 24 24" width="32" height="32">
+                <circle cx="12" cy="12" r="10" fill="none" stroke="url(#logoGrad)" stroke-width="3"/>
+                <path d="M12 2v10l5 5" fill="none" stroke="url(#logoGrad)" stroke-width="3" stroke-linecap="round"/>
+                <defs>
+                    <linearGradient id="logoGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+                        <stop offset="0%" stop-color="#a855f7" />
+                        <stop offset="100%" stop-color="#06b6d4" />
+                    </linearGradient>
+                </defs>
+            </svg>
+            <span class="logo-text">TrySpin<span class="highlight">Decide</span></span>
+        </div>
+        <div class="header-actions">
+            <button class="lang-toggle-btn" id="btnToggleLang">Ελληνικά / EN</button>
+            <button class="lang-toggle-btn" onclick="window.location.href='index.html';">Home / Αρχική</button>
+        </div>
+    </header>
+
+    <main class="app-main" style="grid-template-columns: 1fr; padding: 1rem 2rem;">
+        <div class="glass-panel policy-container">
+            
+            <!-- ENGLISH TERMS -->
+            <div id="policy-en" class="policy-lang-block">
+                <h1 class="seo-main-title" style="font-size: 2rem; margin-bottom: 2rem;">Terms of Use</h1>
+                <p class="info-text" style="font-size: 0.9rem; margin-bottom: 2rem;">Last Updated: June 15, 2026</p>
+
+                <div class="policy-section">
+                    <h2>1. Acceptance of Terms</h2>
+                    <p>By accessing and using SpinDecide (https://www.tryspindecide.com), you accept and agree to be bound by the terms and provision of this agreement.</p>
+                </div>
+
+                <div class="policy-section">
+                    <h2>2. Use License</h2>
+                    <p>Permission is granted to temporarily use the utility tools and wheels on SpinDecide website for personal, non-commercial transitory viewing and usage only.</p>
+                    <p>You may not modify or copy the source code materials, use them for any commercial purpose, or attempt to decompile or reverse engineer any software contained on the site.</p>
+                </div>
+
+                <div class="policy-section">
+                    <h2>3. Disclaimer</h2>
+                    <p>The materials on SpinDecide are provided on an 'as is' basis. SpinDecide makes no warranties, expressed or implied, and hereby disclaims and negates all other warranties including, without limitation, implied warranties or conditions of merchantability, fitness for a particular purpose, or non-infringement of intellectual property or other violation of rights.</p>
+                </div>
+
+                <div class="policy-section">
+                    <h2>4. Limitations of Liability</h2>
+                    <p>In no event shall SpinDecide or its suppliers be liable for any damages (including, without limitation, damages for loss of data or profit, or due to business interruption) arising out of the use or inability to use the materials on SpinDecide.</p>
+                </div>
+            </div>
+
+            <!-- GREEK TERMS -->
+            <div id="policy-el" class="policy-lang-block hidden">
+                <h1 class="seo-main-title" style="font-size: 2rem; margin-bottom: 2rem;">Όροι Χρήσης</h1>
+                <p class="info-text" style="font-size: 0.9rem; margin-bottom: 2rem;">Τελευταία Ενημέρωση: 15 Ιουνίου 2026</p>
+
+                <div class="policy-section">
+                    <h2>1. Αποδοχή Όρων</h2>
+                    <p>Με την πρόσβαση και τη χρήση του SpinDecide (https://www.tryspindecide.com), αποδέχεστε και συμφωνείτε να δεσμεύεστε από τους όρους αυτής της συμφωνίας.</p>
+                </div>
+
+                <div class="policy-section">
+                    <h2>2. Άδεια Χρήσης</h2>
+                    <p>Παρέχεται άδεια για προσωρινή χρήση των εργαλείων και των τροχών στο SpinDecide αποκλειστικά για προσωπική, μη εμπορική χρήση.</p>
+                </div>
+
+                <div class="policy-section">
+                    <h2>3. Αποποίηση Ευθύνης</h2>
+                    <p>Οι υπηρεσίες του SpinDecide παρέχονται «ως έχουν». Δεν παρέχεται καμία εγγύηση για την καταλληλότητα των αποτελεσμάτων ή την αδιάλειπτη λειτουργία της ιστοσελίδας.</p>
+                </div>
+            </div>
+
+        </div>
+    </main>
+
+    <footer class="app-footer">
+        <div class="footer-content">
+            <p>&copy; 2026 SpinDecide. All rights reserved. Built for speed and global SEO.</p>
+            <div class="footer-links">
+                <a href="index.html">Custom Wheel</a>
+                <a href="privacy-policy.html">Privacy Policy</a>
+                <a href="terms-of-use.html">Terms of Use</a>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        const btnToggle = document.getElementById('btnToggleLang');
+        const policyEn = document.getElementById('policy-en');
+        const policyEl = document.getElementById('policy-el');
+        
+        btnToggle.addEventListener('click', () => {
+            if (policyEn.classList.contains('hidden')) {
+                policyEn.classList.remove('hidden');
+                policyEl.classList.add('hidden');
+            } else {
+                policyEn.classList.add('hidden');
+                policyEl.classList.remove('hidden');
+            }
+        });
+    </script>
+</body>
+</html>
