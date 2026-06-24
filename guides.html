@@ -1,0 +1,231 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Decision Wheel Guides & Articles | SpinDecide</title>
+    <meta name="description" content="Explore our ultimate guides on decision making, classroom name pickers, virtual Secret Santa gift exchanges, and fun party spin games.">
+    <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Ctext y='.9em' font-size='90'%3E🎡%3C/text%3E%3C/svg%3E">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+    <style>
+        .guides-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 2rem;
+            margin-top: 2rem;
+        }
+        .guide-card {
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            padding: 2rem;
+            transition: var(--transition-smooth);
+        }
+        .guide-card:hover {
+            transform: translateY(-4px);
+            border-color: var(--accent-cyan);
+            box-shadow: 0 12px 40px rgba(6, 182, 212, 0.15);
+        }
+        .guide-card h2 {
+            font-size: 1.35rem;
+            font-weight: 700;
+            margin-bottom: 0.75rem;
+            color: var(--text-primary);
+        }
+        .guide-card p {
+            color: var(--text-secondary);
+            font-size: 0.95rem;
+            line-height: 1.6;
+            margin-bottom: 1.5rem;
+        }
+        .read-btn {
+            background: linear-gradient(135deg, var(--accent-purple), var(--accent-cyan));
+            color: #ffffff;
+            border: none;
+            padding: 0.6rem 1.2rem;
+            border-radius: 8px;
+            font-weight: 600;
+            cursor: pointer;
+            text-decoration: none;
+            display: inline-block;
+            align-self: flex-start;
+            font-size: 0.9rem;
+            transition: var(--transition-smooth);
+        }
+        .read-btn:hover {
+            box-shadow: 0 4px 15px var(--accent-cyan-glow);
+            transform: translateY(-1px);
+        }
+        .lang-toggle-btn {
+            background: rgba(255, 255, 255, 0.05);
+            border: 1px solid var(--panel-border);
+            color: var(--text-primary);
+            padding: 0.5rem 1rem;
+            border-radius: 9999px;
+            font-family: inherit;
+            font-weight: 600;
+            cursor: pointer;
+            transition: var(--transition-smooth);
+        }
+        .lang-toggle-btn:hover {
+            border-color: var(--accent-cyan);
+            background: rgba(255, 255, 255, 0.1);
+        }
+        .guides-lang-block {
+            display: block;
+        }
+        .guides-lang-block.hidden {
+            display: none !important;
+        }
+        @media (max-width: 768px) {
+            .guides-grid {
+                grid-template-columns: 1fr;
+                gap: 1.5rem;
+            }
+        }
+    </style>
+</head>
+<body class="theme-cyber">
+    <div class="glow-orb orb-1"></div>
+    <div class="glow-orb orb-2"></div>
+
+    <header class="app-header">
+        <div class="logo-container" onclick="window.location.href='index.html';">
+            <svg class="logo-icon" viewBox="0 0 24 24" width="32" height="32">
+                <circle cx="12" cy="12" r="10" fill="none" stroke="url(#logoGrad)" stroke-width="3"/>
+                <path d="M12 2v10l5 5" fill="none" stroke="url(#logoGrad)" stroke-width="3" stroke-linecap="round"/>
+                <defs>
+                    <linearGradient id="logoGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+                        <stop offset="0%" stop-color="#a855f7" />
+                        <stop offset="100%" stop-color="#06b6d4" />
+                    </linearGradient>
+                </defs>
+            </svg>
+            <span class="logo-text">TrySpin<span class="highlight">Decide</span></span>
+        </div>
+        <div class="header-actions">
+            <button class="lang-toggle-btn" id="btnToggleLang">Ελληνικά / EN</button>
+            <button class="lang-toggle-btn" onclick="window.location.href='index.html';">Home / Αρχική</button>
+        </div>
+    </header>
+
+    <main class="app-main" style="grid-template-columns: 1fr; padding: 2rem;">
+        
+        <!-- ENGLISH GUIDES INDEX -->
+        <div id="guides-en" class="guides-lang-block">
+            <h1 class="seo-main-title" style="text-align: center; margin-bottom: 0.5rem;">Guides & Articles</h1>
+            <p style="color: var(--text-secondary); text-align: center; max-width: 600px; margin: 0 auto 3rem auto; font-size: 1rem;">
+                Learn how to make better decisions, gamify your classroom, host events, and get creative with our custom random spinner wheels.
+            </p>
+
+            <div class="guides-grid">
+                <div class="glass-panel guide-card">
+                    <div>
+                        <h2>👩‍🏫 Classroom Spinner Guide</h2>
+                        <p>Discover creative ways to use a random name picker in your classroom to boost student participation, fairly assign groups, and gamify lessons.</p>
+                    </div>
+                    <a href="guide-classroom-spinner.html" class="read-btn">Read Article ➔</a>
+                </div>
+
+                <div class="glass-panel guide-card">
+                    <div>
+                        <h2>🎄 Virtual Secret Santa Rules</h2>
+                        <p>Learn how to coordinate a fun, contactless Secret Santa gift exchange. We detail budget tips, matching rules, and how to use our online matcher.</p>
+                    </div>
+                    <a href="guide-secret-santa-rules.html" class="read-btn">Read Article ➔</a>
+                </div>
+
+                <div class="glass-panel guide-card">
+                    <div>
+                        <h2>🧠 Overcoming Decision Fatigue</h2>
+                        <p>How daily choices drain our willpower and productivity. Explore the psychology behind decision fatigue and learn how random selectors help.</p>
+                    </div>
+                    <a href="guide-decision-fatigue.html" class="read-btn">Read Article ➔</a>
+                </div>
+
+                <div class="glass-panel guide-card">
+                    <div>
+                        <h2>🎲 7 Spin Wheel Party Games</h2>
+                        <p>Turn your next online call or party into an interactive game show. Explore custom spin wheel games like trivia selectors and truth-or-dare.</p>
+                    </div>
+                    <a href="guide-party-games-wheel.html" class="read-btn">Read Article ➔</a>
+                </div>
+            </div>
+        </div>
+
+        <!-- GREEK GUIDES INDEX -->
+        <div id="guides-el" class="guides-lang-block hidden">
+            <h1 class="seo-main-title" style="text-align: center; margin-bottom: 0.5rem;">Οδηγοί & Άρθρα</h1>
+            <p style="color: var(--text-secondary); text-align: center; max-width: 600px; margin: 0 auto 3rem auto; font-size: 1rem;">
+                Μάθετε πώς να λαμβάνετε καλύτερες αποφάσεις, να κάνετε το μάθημα παιχνίδι, να διοργανώνετε εκδηλώσεις και να διασκεδάζετε με τους τροχούς μας.
+            </p>
+
+            <div class="guides-grid">
+                <div class="glass-panel guide-card">
+                    <div>
+                        <h2>👩‍🏫 Οδηγός Τροχού για την Τάξη</h2>
+                        <p>Ανακαλύψτε δημιουργικούς τρόπους χρήσης του τυχαίου τροχού ονομάτων για να αυξήσετε τη συμμετοχή των μαθητών και να κάνετε το μάθημα παιχνίδι.</p>
+                    </div>
+                    <a href="guide-classroom-spinner.html" class="read-btn">Ανάγνωση ➔</a>
+                </div>
+
+                <div class="glass-panel guide-card">
+                    <div>
+                        <h2>🎄 Κανόνες Secret Santa</h2>
+                        <p>Μάθετε πώς να οργανώσετε μια διασκεδαστική κλήρωση Secret Santa. Δείτε συμβουλές για budget, κανόνες και πώς να χρησιμοποιήσετε το εργαλείο μας.</p>
+                    </div>
+                    <a href="guide-secret-santa-rules.html" class="read-btn">Ανάγνωση ➔</a>
+                </div>
+
+                <div class="glass-panel guide-card">
+                    <div>
+                        <h2>🧠 Καταπολέμηση της Κόπωσης Αποφάσεων</h2>
+                        <p>Πώς οι καθημερινές επιλογές εξαντλούν τη θέλησή μας. Μάθετε την ψυχολογία πίσω από το decision fatigue και πώς βοηθά η τυχαία επιλογή.</p>
+                    </div>
+                    <a href="guide-decision-fatigue.html" class="read-btn">Ανάγνωση ➔</a>
+                </div>
+
+                <div class="glass-panel guide-card">
+                    <div>
+                        <h2>🎲 7 Παιχνίδια με Τροχό για Πάρτι</h2>
+                        <p>Μετατρέψτε το επόμενο πάρτι σας σε τηλεπαιχνίδι. Ανακαλύψτε παιχνίδια με custom τροχούς, όπως επιλογείς trivia και προκλήσεις.</p>
+                    </div>
+                    <a href="guide-party-games-wheel.html" class="read-btn">Ανάγνωση ➔</a>
+                </div>
+            </div>
+        </div>
+
+    </main>
+
+    <footer class="app-footer" style="margin-top: 5rem;">
+        <div class="footer-content">
+            <p>&copy; 2026 SpinDecide. All rights reserved. Built for speed and global SEO.</p>
+            <div class="footer-links">
+                <a href="index.html">Custom Wheel</a>
+                <a href="guides.html">Guides</a>
+                <a href="privacy-policy.html">Privacy Policy</a>
+                <a href="terms-of-use.html">Terms of Use</a>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        const btnToggle = document.getElementById('btnToggleLang');
+        const guidesEn = document.getElementById('guides-en');
+        const guidesEl = document.getElementById('guides-el');
+        
+        btnToggle.addEventListener('click', () => {
+            if (guidesEn.classList.contains('hidden')) {
+                guidesEn.classList.remove('hidden');
+                guidesEl.classList.add('hidden');
+            } else {
+                guidesEn.classList.add('hidden');
+                guidesEl.classList.remove('hidden');
+            }
+        });
+    </script>
+</body>
+</html>
